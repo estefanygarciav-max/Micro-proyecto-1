@@ -26,15 +26,15 @@ module tb_riscv;
         for (i = 0; i < 32; i = i + 1)
             $dumpvars(0, uut.rf.RF[i]);
 
-        // Inicializar los registros
-        // xN = N
+        // Inicializar los registros: xN = N
         for (i = 0; i < 32; i = i + 1)
             uut.rf.RF[i] = i;
 
-        // Mostrar registros importantes
+        // Mostrar registros importantes en tiempo de simulación
         $monitor($time,
-                 " clk=%d | instr=%h | x4=%h | x5=%h | x6=%h | x7=%h | x8=%h",
+                 " clk=%d | rst=%d | instr=%h | x4=%h | x5=%h | x6=%h | x7=%h | x8=%h",
                  clk,
+                 rst,
                  instr,
                  uut.rf.RF[4],
                  uut.rf.RF[5],
@@ -54,70 +54,69 @@ module tb_riscv;
 
 
         // ------------------------------------------------
-        // PRUEBA 1: ADD
-        // x4 = x3 + x2
-        // x4 = 3 + 2 = 5
+        // PRUEBA 1: ADDI
+        // x4 = x3 + 10
+        // Esperado: x4 = 3 + 10 = 13 (0x0000000D)
         // ------------------------------------------------
-
-        instr = 32'b0000000_00010_00011_000_00100_0110011;
-        $display("ADD x4, x3, x2");
+        instr = 32'h00a18213; // ADDI x4, x3, 10
+        $display("========================================");
+        $display("PRUEBA 1: ADDI x4, x3, 10");
+        $display("Esperado: x4 = 13 (0x0000000D)");
 
         #12;
 
 
         // ------------------------------------------------
-        // PRUEBA 2: SUB
-        // x5 = x3 - x2
-        // x5 = 3 - 2 = 1
+        // PRUEBA 2: ANDI
+        // x6 = x10 & 12
+        // Esperado: x6 = 10 & 12 = 8 (0x00000008)
         // ------------------------------------------------
-
-        instr = 32'b0100000_00010_00011_000_00101_0110011;
-        $display("SUB x5, x3, x2");
+        instr = 32'h00c57313; // ANDI x6, x10, 12
+        $display("========================================");
+        $display("PRUEBA 2: ANDI x6, x10, 12");
+        $display("Esperado: x6 = 8 (0x00000008)");
 
         #12;
 
 
         // ------------------------------------------------
-        // PRUEBA 3: AND
-        // x6 = x10 & x12
-        // 10 & 12 = 8
+        // PRUEBA 3: ORI
+        // x8 = x10 | 12
+        // Esperado: x8 = 10 | 12 = 14 (0x0000000E)
         // ------------------------------------------------
-
-        instr = 32'b0000000_01100_01010_111_00110_0110011;
-        $display("AND x6, x10, x12");
+        instr = 32'h00c56413; // ORI x8, x10, 12
+        $display("========================================");
+        $display("PRUEBA 3: ORI x8, x10, 12");
+        $display("Esperado: x8 = 14 (0x0000000E)");
 
         #12;
 
 
         // ------------------------------------------------
-        // PRUEBA 4: OR
-        // x8 = x10 | x12
-        // 10 | 12 = 14
+        // PRUEBA 4: XORI
+        // x7 = x10 ^ 12
+        // Esperado: x7 = 10 ^ 12 = 6 (0x00000006)
         // ------------------------------------------------
-
-        instr = 32'b0000000_01100_01010_110_01000_0110011;
-        $display("OR x8, x10, x12");
-
-        #12;
-
-
-        // ------------------------------------------------
-        // PRUEBA 5: XOR
-        // x7 = x10 ^ x12
-        // 10 ^ 12 = 6
-        // ------------------------------------------------
-
-        instr = 32'b0000000_01100_01010_100_00111_0110011;
-        $display("XOR x7, x10, x12");
+        instr = 32'h00c54393; // XORI x7, x10, 12
+        $display("========================================");
+        $display("PRUEBA 4: XORI x7, x10, 12");
+        $display("Esperado: x7 = 6 (0x00000006)");
 
         #16;
 
 
-        // Fin de la simulación
+        // Resumen final
+        $display("========================================");
+        $display("SIMULACION FINALIZADA");
+        $display("x4 = %d (Esperado: 13)", uut.rf.RF[4]);
+        $display("x6 = %d (Esperado: 8)",  uut.rf.RF[6]);
+        $display("x7 = %d (Esperado: 6)",  uut.rf.RF[7]);
+        $display("x8 = %d (Esperado: 14)", uut.rf.RF[8]);
+        $display("========================================");
+
         $finish;
 
     end
-
 
     // Generador de reloj
     always begin
