@@ -1,0 +1,596 @@
+$date
+	Mon Sep 21 21:25:20 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_riscv $end
+$var reg 1 ! clk $end
+$var reg 32 " instr [31:0] $end
+$var reg 1 # rst $end
+$var integer 32 $ i [31:0] $end
+$scope module uut $end
+$var wire 32 % alu_a [31:0] $end
+$var wire 1 ! clk $end
+$var wire 1 & imm_valid $end
+$var wire 32 ' instr [31:0] $end
+$var wire 1 ( is_b_instr $end
+$var wire 1 ) is_i_instr $end
+$var wire 1 * is_j_instr $end
+$var wire 1 + is_r_instr $end
+$var wire 1 , is_s_instr $end
+$var wire 1 - is_u_instr $end
+$var wire 1 # rst $end
+$var wire 1 . wr_en $end
+$var wire 32 / src2_value [31:0] $end
+$var wire 32 0 src1_value [31:0] $end
+$var wire 5 1 rs2 [4:0] $end
+$var wire 5 2 rs1 [4:0] $end
+$var wire 5 3 rd [4:0] $end
+$var wire 7 4 opcode [6:0] $end
+$var wire 1 5 is_xori $end
+$var wire 1 6 is_xor $end
+$var wire 1 7 is_valid $end
+$var wire 1 8 is_sub $end
+$var wire 1 9 is_ori $end
+$var wire 1 : is_or $end
+$var wire 1 ; is_andi $end
+$var wire 1 < is_and $end
+$var wire 1 = is_addi $end
+$var wire 1 > is_add $end
+$var wire 32 ? imm [31:0] $end
+$var wire 7 @ funct7 [6:0] $end
+$var wire 3 A funct3 [2:0] $end
+$var wire 10 B dec_bits2 [9:0] $end
+$var wire 11 C dec_bits [10:0] $end
+$var wire 32 D alu_out [31:0] $end
+$var wire 32 E alu_b [31:0] $end
+$var reg 32 F IR [31:0] $end
+$scope module rf $end
+$var wire 1 ! clk $end
+$var wire 5 G rd_index1 [4:0] $end
+$var wire 5 H rd_index2 [4:0] $end
+$var wire 1 . wr_en $end
+$var wire 5 I wr_index [4:0] $end
+$var wire 32 J wr_data [31:0] $end
+$var wire 32 K rd_data2 [31:0] $end
+$var wire 32 L rd_data1 [31:0] $end
+$var integer 32 M i [31:0] $end
+$upscope $end
+$scope module rv_alu $end
+$var wire 32 N a [31:0] $end
+$var wire 32 O b [31:0] $end
+$var wire 3 P op [2:0] $end
+$var wire 32 Q ALU_out [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 R \RF[0] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 S \RF[1] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 T \RF[2] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 U \RF[3] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 V \RF[4] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 W \RF[5] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 X \RF[6] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 Y \RF[7] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 Z \RF[8] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 [ \RF[9] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 \ \RF[10] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 ] \RF[11] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 ^ \RF[12] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 _ \RF[13] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 ` \RF[14] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 a \RF[15] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 b \RF[16] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 c \RF[17] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 d \RF[18] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 e \RF[19] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 f \RF[20] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 g \RF[21] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 h \RF[22] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 i \RF[23] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 j \RF[24] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 k \RF[25] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 l \RF[26] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 m \RF[27] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 n \RF[28] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 o \RF[29] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 p \RF[30] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_riscv $end
+$scope module uut $end
+$scope module rf $end
+$var reg 32 q \RF[31] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11111 q
+b11110 p
+b11101 o
+b11100 n
+b11011 m
+b11010 l
+b11001 k
+b11000 j
+b10111 i
+b10110 h
+b10101 g
+b10100 f
+b10011 e
+b10010 d
+b10001 c
+b10000 b
+b1111 a
+b1110 `
+b1101 _
+b1100 ^
+b1011 ]
+b1010 \
+b1001 [
+b1000 Z
+b111 Y
+b110 X
+b101 W
+b100 V
+b11 U
+b10 T
+b1 S
+b0 R
+bx Q
+bx P
+bx O
+bx N
+b100000 M
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+x>
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+b0 '
+x&
+bx %
+b100000 $
+1#
+b0 "
+0!
+$end
+#2000
+0&
+b0 D
+b0 J
+b0 Q
+b100 P
+0.
+b0 E
+b0 O
+0-
+0,
+0+
+0)
+0(
+0*
+b0 ?
+b0 /
+b0 K
+b0 %
+b0 N
+b0 0
+b0 L
+07
+0>
+08
+0<
+0:
+06
+b0 C
+0=
+0;
+09
+05
+b0 B
+b0 @
+b0 1
+b0 H
+b0 2
+b0 G
+b0 A
+b0 3
+b0 I
+b0 4
+b0 R
+b0 F
+1!
+#3000
+b101000011000001000010011 "
+b101000011000001000010011 '
+0#
+#4000
+0!
+#6000
+1&
+1.
+b1101 D
+b1101 J
+b1101 Q
+b1010 ?
+b0 P
+b1010 E
+b1010 O
+1)
+b1010 /
+b1010 K
+b11 %
+b11 N
+b11 0
+b11 L
+17
+b10011 C
+1=
+b10011 B
+b1010 1
+b1010 H
+b11 2
+b11 G
+b100 3
+b100 I
+b10011 4
+b101000011000001000010011 F
+b0 R
+1!
+#8000
+0!
+#10000
+b0 R
+b1101 V
+1!
+#12000
+0!
+#14000
+b0 R
+b1101 V
+1!
+#15000
+b110001010111001100010011 "
+b110001010111001100010011 '
+#16000
+0!
+#18000
+b1000 D
+b1000 J
+b1000 Q
+b10 P
+b1100 E
+b1100 O
+b1100 /
+b1100 K
+b1010 %
+b1010 N
+b1010 0
+b1010 L
+b1100 ?
+b1110010011 C
+0=
+1;
+b1110010011 B
+b1100 1
+b1100 H
+b1010 2
+b1010 G
+b111 A
+b110 3
+b110 I
+b0 R
+b1101 V
+b110001010111001100010011 F
+1!
+#20000
+0!
+#22000
+b0 R
+b1000 X
+1!
+#24000
+0!
+#26000
+b0 R
+b1000 X
+1!
+#27000
+b110001010110010000010011 "
+b110001010110010000010011 '
+#28000
+0!
+#30000
+b1110 D
+b1110 J
+b1110 Q
+b11 P
+b1100010011 C
+0;
+19
+b1100010011 B
+b110 A
+b1000 3
+b1000 I
+b110001010110010000010011 F
+b0 R
+b1000 X
+1!
+#32000
+0!
+#34000
+b0 R
+b1110 Z
+1!
+#36000
+0!
+#38000
+b0 R
+b1110 Z
+1!
+#39000
+b110001010100001110010011 "
+b110001010100001110010011 '
+#40000
+0!
+#42000
+b110 D
+b110 J
+b110 Q
+b100 P
+b1000010011 C
+09
+15
+b1000010011 B
+b100 A
+b111 3
+b111 I
+b0 R
+b1110 Z
+b110001010100001110010011 F
+1!
+#44000
+0!
+#46000
+b0 R
+b110 Y
+1!
+#48000
+0!
+#50000
+b0 R
+b110 Y
+1!
+#52000
+0!
+#54000
+b0 R
+b110 Y
+1!
+#55000
